@@ -32,7 +32,7 @@ const EventDetailPage = () => {
 export default EventDetailPage;
 
 async function loadEvent(id) {
-  const response = await fetch("http://localhost:8080/events/" + id);
+  const response = await fetch("https://advance-routing.onrender.com/" + id);
 
   if (!response.ok) {
     throw json(
@@ -46,7 +46,7 @@ async function loadEvent(id) {
 }
 
 async function loadEvents() {
-  const response = await fetch("http://localhost:8080/events");
+  const response = await fetch("https://advance-routing.onrender.com/events");
 
   if (!response.ok) {
     // throw new Response(
@@ -70,10 +70,13 @@ export async function action({ request, params }) {
 
   const token = getAuthToken();
 
-  const response = await fetch("http://localhost:8080/events/" + eventId, {
-    method: request.method,
-    headers: { Authorization: "Bearer " + token },
-  });
+  const response = await fetch(
+    "https://advance-routing.onrender.com/events/" + eventId,
+    {
+      method: request.method,
+      headers: { Authorization: "Bearer " + token },
+    }
+  );
 
   if (!response.ok) {
     throw json(
