@@ -93,9 +93,9 @@ export async function action({ request, params }) {
     description: data.get("description"),
   };
 
-  let url = "http://localhost:8080/events";
+  let url = "https://advance-routing.onrender.com/events";
   if (method === "PATCH") {
-    url = "http://localhost:8080/events/" + params.eventId;
+    url = "https://advance-routing.onrender.com/events/" + params.eventId;
   }
 
   const token = getAuthToken();

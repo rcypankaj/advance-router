@@ -16,7 +16,7 @@ function EventPage() {
 export default EventPage;
 
 async function loadEvents() {
-  const response = await fetch("http://localhost:8080/events");
+  const response = await fetch("https://advance-routing.onrender.com/events");
 
   if (!response.ok) {
     // throw new Response(
